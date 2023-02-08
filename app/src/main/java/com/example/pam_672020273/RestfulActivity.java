@@ -28,7 +28,6 @@ import javax.net.ssl.HttpsURLConnection;
 public class RestfulActivity extends AppCompatActivity {
 
     private Button btnBaca;
-    private TextView txtView;
 
     String responseText;
     StringBuffer response;
@@ -45,12 +44,10 @@ public class RestfulActivity extends AppCompatActivity {
         setContentView(R.layout.activity_restful);
 
         btnBaca = (Button) findViewById(R.id.btnBaca);
-        txtView = (TextView) findViewById(R.id.txtHasil);
 
         btnBaca.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-//                txtView.setText("Baca Data");
                 countries.clear();
                 new GetServerData().execute();
             }
@@ -78,14 +75,14 @@ public class RestfulActivity extends AppCompatActivity {
             super.onPostExecute(o);
             if (progressDialog.isShowing())
                 progressDialog.dismiss();
-//            CustomCountryList customCountryList = new CustomCountryList(activity, countries);
-//            listView.setAdapter(customCountryList);
-//
-//            listView.setOnItemClickListener(new AdapterView<>().OnItemClickListener() {
-//                @Override
-//                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                    Toast.makeText(getApplicationContext(),"You Selected "+countries.get(position).getCountryName()+ " as Country", Toast.LENGTH_SHORT).show();        }
-//            });
+            CustomCountryList customCountryList = new CustomCountryList(activity, countries);
+            listView.setAdapter(customCountryList);
+
+            listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
+                    Toast.makeText(getApplicationContext(),"You Selected "+countries.get(position).getCountryName()+ " as Country",Toast.LENGTH_SHORT).show();        }
+            });
         }
     }
 

@@ -4,29 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestfulActivity">
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnBaca"
+        android:layout_width="348dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_weight="1"
+        android:text="Baca Data"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/daftar"
         android:layout_width="409dp"
         android:layout_height="550dp"
         android:layout_weight="1"
-        android:background="#9F5454"
-        android:cacheColorHint="#FFFFFF"
-        app:layout_constraintTop_toBottomOf="@+id/btnBaca" />
-
-    <Button
-        android:id="@+id/btnBaca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginLeft="158dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="159dp"
-        android:layout_marginRight="159dp"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:background="#5FB8FF"
+        app:layout_constraintTop_toBottomOf="@+id/btnBaca"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>
