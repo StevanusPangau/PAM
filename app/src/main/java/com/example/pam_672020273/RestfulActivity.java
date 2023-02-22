@@ -2,21 +2,18 @@ package com.example.pam_672020273;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.os.AsyncTask;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -26,14 +23,12 @@ import java.util.ArrayList;
 import javax.net.ssl.HttpsURLConnection;
 
 public class RestfulActivity extends AppCompatActivity {
-
-    private Button btnBaca;
-
+    private Button btnSubmit;
     String responseText;
     StringBuffer response;
     URL url;
     Activity activity;
-    ArrayList<Country> countries=new ArrayList();
+    ArrayList <Country> countries=new ArrayList();
     private ProgressDialog progressDialog;
     ListView listView;
     private String path = "https://gist.githubusercontent.com/keeguon/2310008/raw/bdc2ce1c1e3f28f9cab5b4393c7549f38361be4e/countries.json";
@@ -42,10 +37,10 @@ public class RestfulActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restful);
-
-        btnBaca = (Button) findViewById(R.id.btnBaca);
-
-        btnBaca.setOnClickListener(new View.OnClickListener(){
+        activity = this;
+        btnSubmit = (Button) findViewById(R.id.btnBaca);
+        listView = (ListView) findViewById(R.id.daftar);
+        btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 countries.clear();
@@ -53,7 +48,6 @@ public class RestfulActivity extends AppCompatActivity {
             }
         });
     }
-
     class GetServerData extends AsyncTask
     {
         @Override
@@ -85,7 +79,6 @@ public class RestfulActivity extends AppCompatActivity {
             });
         }
     }
-
     protected Void getWebServiceResponseData() {
         try {
             url = new URL(path);
@@ -123,5 +116,10 @@ public class RestfulActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return null;
+    }
+
+    // Function Kembali Ke Menu Main
+    public void exitClick(View v){
+        this.finish();
     }
 }

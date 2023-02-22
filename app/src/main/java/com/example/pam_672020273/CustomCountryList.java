@@ -1,14 +1,14 @@
 package com.example.pam_672020273;
 
+import android.widget.BaseAdapter;
 import android.app.Activity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import java.util.ArrayList;
 
-public class CustomCountryList {
+public class CustomCountryList extends BaseAdapter {
     public static class ViewHolder
     {
         TextView kode;
@@ -16,7 +16,7 @@ public class CustomCountryList {
     }
 
     private Activity context;
-    ArrayList<Country> countries;
+    ArrayList <Country> countries;
 
 
     public CustomCountryList(Activity context, ArrayList countries) {
@@ -25,6 +25,7 @@ public class CustomCountryList {
         this.countries=countries;
     }
 
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View row=convertView;
         LayoutInflater inflater = context.getLayoutInflater();

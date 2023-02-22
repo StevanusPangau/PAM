@@ -4,28 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".RestfulActivity">
 
     <Button
         android:id="@+id/btnBaca"
-        android:layout_width="348dp"
+        android:layout_width="0dp"
         android:layout_height="58dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_weight="1"
         android:text="Baca Data"
+        app:backgroundTint="#673AB7"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnKembaliRestfull"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ListView
         android:id="@+id/daftar"
-        android:layout_width="409dp"
-        android:layout_height="550dp"
+        android:layout_width="0dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:background="#5FB8FF"
+        android:background="#00FFFFFF"
         app:layout_constraintTop_toBottomOf="@+id/btnBaca"
         tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnKembaliRestfull"
+        android:layout_width="wrap_content"
+        android:layout_height="58dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:onClick="exitClick"
+        android:text="Kembali"
+        app:backgroundTint="#2196F3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
