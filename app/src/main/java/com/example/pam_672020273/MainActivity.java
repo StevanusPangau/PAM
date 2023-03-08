@@ -49,6 +49,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent iMemolite = new Intent(this, MemoliteMainActivity.class);
                 this.startActivity(iMemolite);
                 break;
+            case R.id.btnFragment:
+                Intent iFragment = new Intent(this, FragmentMainActivity.class);
+                this.startActivity(iFragment);
+                break;
         }
     }
 }

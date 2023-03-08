@@ -20,4 +20,12 @@
     <string name="txtHitung">"Hitung"</string>
     <string name="txtNol">"0"</string>
     <string name="buttonClicked">onClick</string>
+
+    <!-- Fragment -->
+    <string name="btn1text">Frame SATU</string>
+    <string name="btn2text">Frame DUA</string>
+    <string name="btntext">Toast</string>
+    <string name="dataHint">Data:</string>
+    <string name="frame1teks">Toast Fragment Satu</string>
+    <string name="frame2teks">Toast Fragment Dua</string>
 </resources>
