@@ -16,11 +16,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        txtHasil = (TextView) findViewById(R.id.txtHasil);
+//        txtHasil = (TextView) findViewById(R.id.txtHasil);
     }
 
     public void gantiActivity(View v){
         switch (v.getId()){
+            case R.id.btnIOSatu:
+                Intent iInputOutputSatu = new Intent(this, IOSatuActivity.class);
+                this.startActivity(iInputOutputSatu);
+                break;
+            case R.id.btnIODua:
+                Intent iInputOutputDua = new Intent(this, IODuaActivity.class);
+                this.startActivity(iInputOutputDua);
+                break;
             case R.id.btnMerah:
                 Intent iRed = new Intent(this, RedActivity.class);
                 this.startActivity(iRed);
@@ -36,6 +44,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnRestful:
                 Intent iRestful = new Intent(this, RestfulActivity.class);
                 this.startActivity(iRestful);
+                break;
+            case R.id.btnMemolite:
+                Intent iMemolite = new Intent(this, MemoliteMainActivity.class);
+                this.startActivity(iMemolite);
                 break;
         }
     }
