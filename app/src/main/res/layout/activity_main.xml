@@ -7,6 +7,23 @@
     tools:context=".MainActivity">
 
     <Button
+        android:id="@+id/btnTTS"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:onClick="gantiActivity"
+        android:text="TTS"
+        app:backgroundTint="#216EF3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnFragment" />
+
+    <Button
         android:id="@+id/btnFragment"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -25,20 +42,16 @@
 
     <Button
         android:id="@+id/btnMerah"
-        android:layout_width="0dp"
+        android:layout_width="125dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:onClick="gantiActivity"
         android:text="Merah"
         app:backgroundTint="#F62727"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIODua" />
+        app:layout_constraintTop_toBottomOf="@+id/btnIOSatu" />
 
     <Button
         android:id="@+id/btnBiru"
@@ -53,9 +66,8 @@
         android:text="Biru"
         app:backgroundTint="#2196F3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnHijau" />
+        app:layout_constraintStart_toEndOf="@+id/btnHijau"
+        app:layout_constraintTop_toBottomOf="@+id/btnIODua" />
 
     <Button
         android:id="@+id/btnRestful"
@@ -93,41 +105,34 @@
 
     <Button
         android:id="@+id/btnHijau"
-        android:layout_width="0dp"
+        android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:onClick="gantiActivity"
         android:text="Hijau"
         app:backgroundTint="#4CAF50"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMerah" />
+        app:layout_constraintStart_toEndOf="@+id/btnMerah"
+        app:layout_constraintTop_toBottomOf="@+id/btnIOSatu" />
 
     <Button
         android:id="@+id/btnIOSatu"
-        android:layout_width="0dp"
+        android:layout_width="185dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
         android:onClick="gantiActivity"
         android:text="Input/Output 1"
         app:backgroundTint="#00BCD4"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnIODua"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
@@ -137,8 +142,7 @@
         android:text="Input/Output 2"
         app:backgroundTint="#FF5722"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnIOSatu" />
+        app:layout_constraintStart_toEndOf="@+id/btnIOSatu"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

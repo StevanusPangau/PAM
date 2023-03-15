@@ -53,6 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent iFragment = new Intent(this, FragmentMainActivity.class);
                 this.startActivity(iFragment);
                 break;
+            case R.id.btnTTS:
+                Intent iTTS = new Intent(this, TTSActivity.class);
+                this.startActivity(iTTS);
+                break;
         }
     }
 }
