@@ -28,4 +28,8 @@
     <string name="dataHint">Data:</string>
     <string name="frame1teks">Toast Fragment Satu</string>
     <string name="frame2teks">Toast Fragment Dua</string>
+
+    <!-- Google Maps-->
+    <string name="title_activity_maps_new">Map</string>
+    <string name="google_maps_key">AIzaSyBH3ILXDb44wKyAeLcOPnrpJz2gVePRVhQ</string>
 </resources>

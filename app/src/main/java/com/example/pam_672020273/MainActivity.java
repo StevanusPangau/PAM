@@ -57,6 +57,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent iTTS = new Intent(this, TTSActivity.class);
                 this.startActivity(iTTS);
                 break;
+            case R.id.btnGoogleMaps:
+                Intent iMaps = new Intent(this, MapsActivity.class);
+                this.startActivity(iMaps);
+                break;
         }
     }
 }
