@@ -32,4 +32,11 @@
     <!-- Google Maps-->
     <string name="title_activity_maps_new">Map</string>
     <string name="google_maps_key">AIzaSyBH3ILXDb44wKyAeLcOPnrpJz2gVePRVhQ</string>
+
+    <!-- Media-->
+<!--    <string name="buttonClicked">onClick</string>-->
+    <string name="strAudioButton">"A U D I O"</string>
+    <string name="strVideoButton1">"Cari"</string>
+    <string name="strVideoButton2">"V I D E O"</string>
+    <string name="strVidURLSample">"https://static.videezy.com/system/resources/previews/000/039/521/original/No-Signal---Bad-TV.mp4"</string>
 </resources>

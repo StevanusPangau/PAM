@@ -1,6 +1,6 @@
 plugins {
     id 'com.android.application'
-    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+//    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.pam_672020273"
-        minSdk 16
+        minSdk 19
         targetSdk 33
         versionCode 1
         versionName "1.0"
