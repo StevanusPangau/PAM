@@ -3,7 +3,6 @@ package com.example.pam_672020273;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -18,7 +17,9 @@ import com.google.android.material.snackbar.Snackbar;
 public class MemoActivity extends AppCompatActivity {
     private DBHelperMemo mydb;
     TextView txtJudul;
-    TextView txtCatatan;
+    TextView txtPembuat;
+    TextView txtPenerbit;
+    TextView txtAbstrak;
     int id_To_Update = 0;
 
     @Override
@@ -26,7 +27,9 @@ public class MemoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_memo);
         txtJudul =(TextView) findViewById(R.id.txtJudul);
-        txtCatatan =(TextView) findViewById(R.id.txtCatatan);
+        txtPembuat =(TextView) findViewById(R.id.txtPembuat);
+        txtPenerbit =(TextView) findViewById(R.id.txtPenerbit);
+        txtAbstrak =(TextView) findViewById(R.id.txtAbstrak);
         mydb = new DBHelperMemo(this);
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -35,11 +38,15 @@ public class MemoActivity extends AppCompatActivity {
                 Cursor rs = mydb.getData(paramId);
                 id_To_Update = paramId;
                 rs.moveToFirst();
-                @SuppressLint("Range") String judul = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_NAME));
-                @SuppressLint("Range") String catatan = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_CONTENT));
+                @SuppressLint("Range") String judul = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_JUDUL));
+                @SuppressLint("Range") String pembuat = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_PEMBUAT));
+                @SuppressLint("Range") String penerbit = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_PENERBIT));
+                @SuppressLint("Range") String abstrak = rs.getString(rs.getColumnIndex(DBHelperMemo.COLUMN_ABSTRAK));
                 if (!rs.isClosed()) rs.close();
                 txtJudul.setText((CharSequence) judul);
-                txtCatatan.setText((CharSequence) catatan);
+                txtPembuat.setText((CharSequence) pembuat);
+                txtPenerbit.setText((CharSequence) penerbit);
+                txtAbstrak.setText((CharSequence) abstrak);
                 Toast.makeText(this,"proses ubah data " + String.valueOf(paramId),Toast.LENGTH_LONG).show();
             } else
                 Toast.makeText(this,"proses tambah data",Toast.LENGTH_LONG).show();
@@ -72,7 +79,7 @@ public class MemoActivity extends AppCompatActivity {
             int id = extras.getInt("id");
             if (id==0){
                 try {
-                    if (mydb.insertData(txtJudul.getText().toString(), txtCatatan.getText().toString())) {
+                    if (mydb.insertData(txtJudul.getText().toString(), txtPembuat.getText().toString(), txtPenerbit.getText().toString(), txtAbstrak.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "data tercatat",
                                 Toast.LENGTH_SHORT).show();
                     } else {
@@ -85,7 +92,7 @@ public class MemoActivity extends AppCompatActivity {
                 }
             } else { //update data
                 try {
-                    if (mydb.updateData(id,txtJudul.getText().toString(), txtCatatan.getText().toString())) {
+                    if (mydb.updateData(id,txtJudul.getText().toString(), txtPembuat.getText().toString(), txtPenerbit.getText().toString(), txtAbstrak.getText().toString())) {
                         Toast.makeText(getApplicationContext(), "data "+String.valueOf(id)+" tersimpan",
                                 Toast.LENGTH_SHORT).show();
                     } else {

@@ -13,8 +13,11 @@ import android.util.Log;
 public class DBHelperMemo extends SQLiteOpenHelper {
     public static final String DATABASE_NAME = "bepungMemo.db";
     public static final String TABLE_NAME = "memo";
-    public static final String COLUMN_NAME = "judul" ;
-    public static final String COLUMN_CONTENT = "catatan" ;
+    public static final String COLUMN_JUDUL = "judul" ;
+    public static final String COLUMN_PEMBUAT = "pembuat" ;
+    public static final String COLUMN_PENERBIT = "penerbit" ;
+    public static final String COLUMN_ABSTRAK = "abstrak" ;
+//    public static final String COLUMN_CONTENT = "catatan" ;
 
     public DBHelperMemo(Context context) {
         super(context, DATABASE_NAME, null, 1);
@@ -23,8 +26,7 @@ public class DBHelperMemo extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(
-                "create table " + TABLE_NAME + "(id integer primary key, "+
-                        COLUMN_NAME+" text,"+COLUMN_CONTENT+" text)"
+                "create table " + TABLE_NAME + "(id integer primary key, "+ COLUMN_JUDUL +" text,"+COLUMN_PEMBUAT+" text, "+ COLUMN_PENERBIT +" text, "+ COLUMN_ABSTRAK + " text)"
         );
     }
 
@@ -34,11 +36,13 @@ public class DBHelperMemo extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public boolean insertData(String parJudul, String parCatatan) {
+    public boolean insertData(String parJudul, String parPembuat, String parPenerbit, String parAbstrak) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_NAME, parJudul);
-        contentValues.put(COLUMN_CONTENT, parCatatan);
+        contentValues.put(COLUMN_JUDUL, parJudul);
+        contentValues.put(COLUMN_PEMBUAT, parPembuat);
+        contentValues.put(COLUMN_PENERBIT, parPenerbit);
+        contentValues.put(COLUMN_ABSTRAK, parAbstrak);
         long i = db.insert(TABLE_NAME, null, contentValues);
         return (i>=0);
     }
@@ -55,11 +59,13 @@ public class DBHelperMemo extends SQLiteOpenHelper {
         return numRows;
     }
 
-    public boolean updateData(Integer id, String parJudul, String parCatatan) {
+    public boolean updateData(Integer id, String parJudul, String parPembuat, String parPenerbit, String parAbstrak) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-        contentValues.put(COLUMN_NAME, parJudul);
-        contentValues.put(COLUMN_CONTENT, parCatatan);
+        contentValues.put(COLUMN_JUDUL, parJudul);
+        contentValues.put(COLUMN_PEMBUAT, parPembuat);
+        contentValues.put(COLUMN_PENERBIT, parPenerbit);
+        contentValues.put(COLUMN_ABSTRAK, parAbstrak);
         long i = db.update(TABLE_NAME, contentValues, "id = ? ", new String[]{Integer.toString(id)});
         return (i>=0);
     }
@@ -80,8 +86,8 @@ public class DBHelperMemo extends SQLiteOpenHelper {
             Log.d("________bepung_jmlData", Integer.toString(res.getCount()));
             res.moveToFirst();
             while (res.isAfterLast() == false) {
-                Log.d("_______bepung_baca_data", res.getString(res.getColumnIndex(COLUMN_NAME)));
-                array_list.add(res.getString(res.getColumnIndex(COLUMN_NAME)));
+                Log.d("_______bepung_baca_data", res.getString(res.getColumnIndex(COLUMN_JUDUL)));
+                array_list.add(res.getString(res.getColumnIndex(COLUMN_JUDUL)));
                 res.moveToNext();
             }
         } catch (Exception e) {

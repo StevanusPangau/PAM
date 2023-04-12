@@ -6,6 +6,36 @@
     android:layout_height="match_parent"
     tools:context=".MemoActivity">
 
+    <EditText
+        android:id="@+id/txtPenerbit"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Penerbit"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPembuat" />
+
+    <EditText
+        android:id="@+id/txtPembuat"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:ems="10"
+        android:hint="Pembuat"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/btnKembali"
         android:layout_width="wrap_content"
@@ -62,17 +92,18 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/txtCatatan"
-        android:layout_width="0dp"
-        android:layout_height="443dp"
+        android:id="@+id/txtAbstrak"
+        android:layout_width="410dp"
+        android:layout_height="193dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:ems="10"
         android:gravity="start|top"
-        android:hint="Catatan"
+        android:hint="Abstrak"
         android:inputType="textMultiLine"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtJudul" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPenerbit" />
 </androidx.constraintlayout.widget.ConstraintLayout>
